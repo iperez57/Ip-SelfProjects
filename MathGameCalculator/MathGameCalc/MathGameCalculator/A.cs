@@ -40,6 +40,8 @@ namespace MathGameCalculator
             } while (!isValid || userInput != sum);
 
             Console.WriteLine("Correct!");
+            Console.WriteLine("Press any key to return to the main menu...");
+            Console.ReadKey();
 
 
         }
