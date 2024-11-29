@@ -8,11 +8,6 @@
             bool shouldExit = false;
 
             GameStart.StartScreen();
-            while (!shouldExit)
-            {
-                if (Console.ReadKey().Key == ConsoleKey.Escape)
-                    shouldExit = true;
-            }
 
         }
     }
