@@ -11,7 +11,9 @@ namespace MathGameCalculator
         //shows the menu for all the different math games available
         internal static void StartScreen()
         {
+
             Console.Clear();
+            var history = new List<string>();
             string input;
             do
             {
@@ -30,11 +32,11 @@ namespace MathGameCalculator
             } while (true);
 
             Console.Clear();
-            MenuSelection(input);
+            MenuSelection(input, history);
         }
 
         //reads user input for what game they want to play.
-        internal static void MenuSelection(string input)
+        internal static void MenuSelection(string input, List<string> history)
         {
             do
             {
@@ -45,6 +47,7 @@ namespace MathGameCalculator
                 Console.WriteLine("S: Subtraction");
                 Console.WriteLine("D: Division");
                 Console.WriteLine("M: Multiplication");
+                Console.WriteLine("H: History");
                 Console.WriteLine("Q: Quit\n");
 
                 Console.WriteLine("Enter one of the options from above:");
@@ -59,16 +62,19 @@ namespace MathGameCalculator
                 switch (gameSelection)
                 {
                     case "a":
-                        A.Addition();
+                        A.Addition(history);
                         break;
                     case "s":
-                        S.Subtraction();
+                        S.Subtraction(history);
                         break;
                     case "d":
-                        D.Division();
+                        D.Division(history);
                         break;
                     case "m":
-                        M.Multiplication();
+                        M.Multiplication(history);
+                        break;
+                    case "h":
+                        H.History(history);
                         break;
                     case "q":
                         Console.WriteLine("Thanks for playing! Goodbye!");

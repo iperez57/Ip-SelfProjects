@@ -8,7 +8,7 @@ namespace MathGameCalculator
 {
     internal class CorrectSum
     {
-        public static void CheckCorrectSum(int sum, out int userInput, out bool isValid)
+        public static void CheckCorrectSum(int sum, out int userInput, out bool isValid, List<string> history)
         {
             do
             {
@@ -22,6 +22,7 @@ namespace MathGameCalculator
                 else if (userInput != sum)
                 {
                     Console.WriteLine("Incorrect. Try Again!");
+                    
                 }
             } while (!isValid || userInput != sum);
 

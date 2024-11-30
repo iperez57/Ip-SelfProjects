@@ -9,7 +9,7 @@ namespace MathGameCalculator
     internal class A
     {
         //method for addition game
-        internal static void Addition()
+        internal static void Addition(List<string> history)
         {
             do
             {
@@ -26,7 +26,8 @@ namespace MathGameCalculator
                 bool isValid;
 
                 // Check if the user provides the correct answer
-                CorrectSum.CheckCorrectSum(sum, out userInput, out isValid);
+                CorrectSum.CheckCorrectSum(sum, out userInput, out isValid, history);
+                history.Add($"Addition: {number1} + {number2} = {sum} (Correct)");
 
                 // Ask the user if they want to play again
                 if (!PlayAgain.yesOrNo())

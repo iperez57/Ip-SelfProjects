@@ -9,7 +9,7 @@ namespace MathGameCalculator
     internal class D
     {
         //method for division game
-        internal static void Division()
+        internal static void Division(List<string> history)
         {
             do
             {
@@ -26,14 +26,15 @@ namespace MathGameCalculator
                 bool isValid;
 
                 // Check if the user provides the correct answer
-                CorrectSum.CheckCorrectSum(sum, out userInput, out isValid);
+                CorrectSum.CheckCorrectSum(sum, out userInput, out isValid, history);
+                history.Add($"Division: {number1} + {number2} = {sum} (Correct)");
 
                 // Ask the user if they want to play again
                 if (!PlayAgain.yesOrNo())
                 {
                     Console.Clear();
                     Console.WriteLine("Returning to the main menu...");
-                    return; // Exit the `Addition` method and return to the main menu
+                    return; // Exit the `Division` method and return to the main menu
                 }
 
             } while (true);
