@@ -12,36 +12,36 @@ namespace MathGameCalculator
         internal static void StartScreen()
         {
 
-            Console.Clear();
+            
             var history = new List<string>();
-            string input;
+            string inputName;
             do
             {
                 Console.WriteLine("Please Enter your Name: ");
-                input = Console.ReadLine();
+                inputName = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(input))
+                if (string.IsNullOrWhiteSpace(inputName))
                 {
                     Console.WriteLine("Invalid input. Please enter a valid name.");
                 }
                 else
                 {
-                    Console.WriteLine($"Hello, {input}!");
+                    Console.WriteLine($"Hello, {inputName}!");
                     break; // Exit the loop once a valid name is entered.
                 }
             } while (true);
 
             Console.Clear();
-            MenuSelection(input, history);
+            MenuSelection(inputName, history);
         }
 
         //reads user input for what game they want to play.
-        internal static void MenuSelection(string input, List<string> history)
+        internal static void MenuSelection(string inputName, List<string> history)
         {
             do
             {
                 Console.Clear();
-                Console.WriteLine($"Welcome {input}!\n");
+                Console.WriteLine($"Welcome {inputName}!\n");
                 Console.WriteLine("What game would you like to play?\n");
                 Console.WriteLine("A: Addition");
                 Console.WriteLine("S: Subtraction");
