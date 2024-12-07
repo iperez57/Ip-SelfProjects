@@ -19,14 +19,8 @@ namespace Game
                 Console.WriteLine("Warrior");
                 Console.WriteLine("Mage");
                 Console.WriteLine("Tank");
-                Console.WriteLine("Type which class you want to choose:");
+                Console.WriteLine("Type which class you want to choose:\n");
                 string classSelection = Console.ReadLine().ToLower().Trim();
-
-                if (string.IsNullOrWhiteSpace(classSelection))
-                {
-                    Console.WriteLine("Invalid input. Please enter a valid option.");
-                    continue;
-                }
 
                 HeroClass selectedHero = null;
 
@@ -41,21 +35,40 @@ namespace Game
                     case "mage":
                         selectedHero = new Mage();
                         break;
-                    case "Tank":
+                    case "tank":
                         selectedHero = new Tank();
                         break;
                     default:
-                        Console.WriteLine("Invalid class selection.");
-                        break;
+                        continue;
                 }
                 selectedHero.DisplayStats();
 
-                Console.WriteLine("\nDo you want to continue with this hero? (y/n)");
-                string continueChoice = Console.ReadLine().ToLower().Trim();
+                string continueChoice;
+                do
+                {
+                    Console.WriteLine($"\nDo you want to continue with this hero({classSelection})? (y/n)");
+                    continueChoice = Console.ReadLine().ToLower().Trim();
 
+                    if (continueChoice != "y" && continueChoice != "n")
+                    {
+                        Console.Clear();
+                        selectedHero.DisplayStats();
+                        Console.WriteLine("Invalid input. Please enter 'y' or 'n'.");
+                    }
+                } while (continueChoice != "y" && continueChoice != "n");
 
+                if (continueChoice == "y")
+                {
+                    GameLoop.gameObjective();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please select a different hero.");
+                }
 
             } while (true);
+
         }
     }
 }
