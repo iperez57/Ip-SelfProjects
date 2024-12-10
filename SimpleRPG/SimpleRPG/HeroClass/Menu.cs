@@ -38,6 +38,8 @@ namespace Game
                     case "tank":
                         selectedHero = new Tank();
                         break;
+                    default:
+                        continue;
                 }
                 selectedHero.DisplayStats();
 

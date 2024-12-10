@@ -13,20 +13,16 @@ namespace Game
         public int heroLevel;
         public string heroClass;
         public int heroDefense;
-        public int heroDodgeChance;
-        public int heroExperience;
         
 
         public HeroClass()
         {
-            heroLevel = 1;
-            heroExperience = 0;
 
         }
 
         internal void DisplayStats()
         {
-            Console.WriteLine($"Class: {heroClass}, HP: {heroHP}, Attack: {heroAttack}, Level: {heroLevel}, Defense: {heroDefense}, Dodge Chance: {heroDodgeChance}%");
+            Console.WriteLine($"Class: {heroClass}, HP: {heroHP}, Attack: {heroAttack},Defense: {heroDefense}");
         }
     }
     internal class Archer : HeroClass
@@ -37,7 +33,7 @@ namespace Game
             heroAttack = 20;
             heroClass = "Archer";
             heroDefense = 10;
-            heroDodgeChance = 25;
+
         }
     }
 
@@ -49,7 +45,7 @@ namespace Game
             heroAttack = 15;
             heroClass = "Warrior";
             heroDefense = 15;
-            heroDodgeChance = 15;
+
         }
     }
     internal class Mage : HeroClass
@@ -60,7 +56,7 @@ namespace Game
             heroAttack = 25;
             heroClass = "Mage";
             heroDefense = 5;
-            heroDodgeChance = 10;
+
 
         }
     }
@@ -73,7 +69,7 @@ namespace Game
             heroAttack = 5;
             heroClass = "Tank";
             heroDefense = 20;
-            heroDodgeChance = 5;
+
 
         }
     }

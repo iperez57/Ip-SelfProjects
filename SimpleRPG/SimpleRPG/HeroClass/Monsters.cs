@@ -31,7 +31,7 @@ namespace Game
 
     internal class Goblin : Monsters
     {
-        public Goblin() : base(15, 10, 5, 30)
+        public Goblin() : base(15, 20, 5, 30)
         {
             monsterType = "Goblin";
             

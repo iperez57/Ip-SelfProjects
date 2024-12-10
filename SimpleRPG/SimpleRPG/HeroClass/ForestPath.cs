@@ -20,10 +20,10 @@ namespace Game
                 switch (pathRiver)
                 {
                     case "left":
-                        RiverPath.riverLeft();
+                        RiverPath.riverLeftForest(selectedHero);
                         break;
                     case "right":
-                        RiverPath.riverRight();
+                        RiverPath.riverRightForest(selectedHero);
                         break;
                     default:
                         Console.WriteLine("Invalid choice. Please choose left, right, or straight.");
@@ -59,10 +59,11 @@ namespace Game
                 case "fight":
 
                     CombatSystem.StartBattle(selectedHero, goblins);
+                    RiverPath.riverGoblinFight(selectedHero);
                     break;
                 case "2":
                 case "run":
-                    AttemptEscape(selectedHero);
+                    Flee.AttemptEscape(selectedHero);
                     break;
                 default:
                     Console.WriteLine("Invalid choice! The goblins close in!");
@@ -71,29 +72,5 @@ namespace Game
             }
         }
 
-        private static void AttemptEscape(HeroClass selectedHero)
-        {
-            Console.Clear();
-            Console.WriteLine("You try to run away...");
-            Random rng = new Random();
-            if (rng.Next(0, 100) < 50) // 50% chance to escape
-            {
-                Console.WriteLine("You successfully escape the goblins!");
-                Console.ReadKey();
-                // Return to the previous method or path selection
-            }
-            else
-            {
-                Console.WriteLine("You failed to escape! The goblins catch up.");
-                Console.ReadKey();
-                List<Monsters> goblins = new List<Monsters>
-                {
-                    new Goblin(),
-                    new Goblin(),
-                    new Goblin()
-                };
-                CombatSystem.StartBattle(selectedHero, goblins);
-            }
-        }
     }
 }

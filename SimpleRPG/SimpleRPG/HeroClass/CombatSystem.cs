@@ -37,9 +37,81 @@ namespace Game
                 }
 
                 // Player's turn logic here...
+                Console.WriteLine("\nYour Turn!");
+                bool validAction = false;
+                
+                do
+                {
+                    Console.WriteLine("Choose an action: 1. Attack 2. Defend");
+                    string action = Console.ReadLine()?.Trim();
+                    switch (action)
+                    {
+                        case "1":
+                        case "fight":
+                            Console.WriteLine("You Attack!");
+                            HeroAttack(selectedHero, enemies);
+                            validAction = true;
+                            break;
+                        case "2":
+                        case "defend":
+                            Console.WriteLine("You Defend!");
+                            DefendPlayer(selectedHero);
+                            validAction = true;
+                            break;
+                        default:
+                            Console.WriteLine("Invalid choice! Try again");
+                            break;
+                    }
+                } while(!validAction);
 
                 // Enemy's turn logic here...
+                Console.WriteLine("\nEnemy Turn!");
+                foreach (var enemy in enemies)
+                {
+                    if (enemy.monsterHP > 0)
+                    {
+                        Console.WriteLine("An enemy attacks you!");
+                        MonsterAttack(selectedHero, enemy);
+                    }
+                }
+            }
+            if (selectedHero.heroHP <= 0)
+            {
+                Console.WriteLine("\nYou have been defeated...");
             }
         }
+        private static void HeroAttack(HeroClass selectedHero, List<Monsters> enemies)
+        {
+            // Example attack logic (targets the first enemy with HP > 0)
+            foreach (var enemy in enemies)
+            {
+                if (enemy.monsterHP > 0)
+                {
+                    enemy.monsterHP -= selectedHero.heroAttack; // Damage calculation
+                    Console.WriteLine($"You dealt {selectedHero.heroAttack} damage to an enemy!");
+                    if (enemy.monsterHP <= 0)
+                    {
+                        Console.WriteLine("You defeated an enemy!");
+                    }
+                    break;
+                }
+            }
+        }
+
+        private static void DefendPlayer(HeroClass selectedHero)
+        {
+            // Example defense logic
+            Console.WriteLine($"You braces for impact, reducing incoming damage!");
+            selectedHero.heroDefense += 5; // Temporary defense boost
+        }
+
+        private static void MonsterAttack(HeroClass selectedHero, Monsters enemy)
+        {
+            // Example enemy attack logic
+            int damage = Math.Max(enemy.monsterAttack - selectedHero.heroDefense, 0); // Damage reduced by defense
+            selectedHero.heroHP -= damage;
+            Console.WriteLine($"An enemy dealt {damage} damage to you! Your HP is now {selectedHero.heroHP}.");
+        }
+       
     }
 }
