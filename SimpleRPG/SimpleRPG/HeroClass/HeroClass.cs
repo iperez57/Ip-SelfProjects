@@ -8,13 +8,13 @@ namespace Game
 {
     internal class HeroClass
     {
-        protected int heroHP;
-        protected int heroAttack;
-        protected int heroLevel;
-        protected string heroClass;
-        protected int heroDefense;
-        protected int heroDodgeChance;
-        protected int heroExperience;
+        public int heroHP;
+        public int heroAttack;
+        public int heroLevel;
+        public string heroClass;
+        public int heroDefense;
+        public int heroDodgeChance;
+        public int heroExperience;
         
 
         public HeroClass()

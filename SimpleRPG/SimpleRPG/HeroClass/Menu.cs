@@ -38,8 +38,6 @@ namespace Game
                     case "tank":
                         selectedHero = new Tank();
                         break;
-                    default:
-                        continue;
                 }
                 selectedHero.DisplayStats();
 
@@ -59,7 +57,7 @@ namespace Game
 
                 if (continueChoice == "y")
                 {
-                    GameLoop.gameObjective();
+                    GameLoop.gameObjective(selectedHero);
                     break;
                 }
                 else
