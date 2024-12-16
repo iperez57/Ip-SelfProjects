@@ -70,7 +70,7 @@ namespace Game
                 {
                     if (enemy.monsterHP > 0)
                     {
-                        Console.WriteLine("An enemy attacks you!");
+                        Console.WriteLine($"A {enemy.monsterType} attacks you!");
                         MonsterAttack(selectedHero, enemy);
                     }
                 }
@@ -88,10 +88,10 @@ namespace Game
                 if (enemy.monsterHP > 0)
                 {
                     enemy.monsterHP -= selectedHero.heroAttack; // Damage calculation
-                    Console.WriteLine($"You dealt {selectedHero.heroAttack} damage to an enemy!");
+                    Console.WriteLine($"You dealt {selectedHero.heroAttack} damage to a {enemy.monsterType}!");
                     if (enemy.monsterHP <= 0)
                     {
-                        Console.WriteLine("You defeated an enemy!");
+                        Console.WriteLine($"You defeated an {enemy.monsterType}!");
                     }
                     break;
                 }
@@ -110,7 +110,7 @@ namespace Game
             // Example enemy attack logic
             int damage = Math.Max(enemy.monsterAttack - selectedHero.heroDefense, 0); // Damage reduced by defense
             selectedHero.heroHP -= damage;
-            Console.WriteLine($"An enemy dealt {damage} damage to you! Your HP is now {selectedHero.heroHP}.");
+            Console.WriteLine($"A {enemy.monsterType} dealt {damage} damage to you! Your HP is now {selectedHero.heroHP}.");
         }
        
     }

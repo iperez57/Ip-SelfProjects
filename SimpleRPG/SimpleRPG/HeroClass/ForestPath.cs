@@ -13,20 +13,20 @@ namespace Game
             do
             {
                 Console.Clear();
-                Console.WriteLine("You decided to walk straight and encountered a wide river. Do you want to cross the bridge ahead of you, go left, or go right ?");
-                Console.WriteLine("Which path do you want to go through? left, right, straight.");
+                Console.WriteLine("You decided to walk right and encountered a wide river. Do you want to cross the bridge ahead of you or go right ?");
+                Console.WriteLine("Which path do you want to go through? 1. cross the bridge 2. right?");
                 string pathRiver = Console.ReadLine().ToLower().Trim();
 
                 switch (pathRiver)
                 {
-                    case "left":
-                        RiverPath.riverLeftForest(selectedHero);
+                    case "bridge":
+                        RiverPath.riverBridgeForest(selectedHero);
                         break;
                     case "right":
                         RiverPath.riverRightForest(selectedHero);
                         break;
                     default:
-                        Console.WriteLine("Invalid choice. Please choose left, right, or straight.");
+                        Console.WriteLine("Invalid choice. Please choose left or right");
                         Console.WriteLine("Press any key to try again...");
                         Console.ReadKey();
                         continue;
