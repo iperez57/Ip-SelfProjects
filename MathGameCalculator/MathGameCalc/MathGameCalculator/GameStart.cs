@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathGameCalculator
 {
-    internal class GameStart
+    internal class GameStart 
     {
         //shows the menu for all the different math games available
         internal static void StartScreen()
