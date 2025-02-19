@@ -1,7 +1,15 @@
-﻿Console.WriteLine("Hello, what is your name?");
+﻿using OOPAdventure;
+
+
+var language = new English();
+
+Console.WriteLine(language.ChooseYourName);
 
 var name = Console.ReadLine();
 
 if (name == string.Empty)
     name = "No Name";
-Console.WriteLine($"Welcome {name} to your OOP Adventure!");
+
+var player = new Player(name);
+
+Console.WriteLine($"Welcome {player.Name} to your OOP Adventure!");
