@@ -4,7 +4,11 @@
     {
         public Player Player { get; }
 
-        private readonly Random random = new(1234);
+        private readonly Random _random = new(1234);
+
+        public int Width {  get; set; }
+        public int Height { get; set; }
+        public Room[] Rooms { get; set; }
 
         public House(Player player)
         {
