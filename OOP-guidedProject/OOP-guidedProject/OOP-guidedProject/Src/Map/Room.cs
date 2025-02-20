@@ -2,11 +2,11 @@
 
 namespace OOPAdventure
 {
-    public class Room
+    public class Room : IInventory
     {
         public string Name { get; set; } = Text.Language.DefaultRoomName;
         public string Description { get; set; } = Text.Language.DefaultRoomDescription;
-
+        private readonly IInventory _items = new Inventory();
         public Dictionary<Directions, int> Neighbors { get; set; } = new()
         {
             {Directions.North, -1 },
@@ -17,6 +17,10 @@ namespace OOPAdventure
 
         };
         public bool Visited { get; set; }
+
+        public int Total => throw new NotImplementedException();
+
+        public string[] InventoryList => throw new NotImplementedException();
 
         public override string ToString()
         {
@@ -37,6 +41,41 @@ namespace OOPAdventure
             sb.Append(description);
 
             return sb.ToString();
+        }
+
+        public void Add(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Contains(string itemName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Item? Find(string itemName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Item? Find(string itemName, bool remove)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Item? Take(string itemName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Use(string itemName, string source)
+        {
+            throw new NotImplementedException();
         }
     }
 }

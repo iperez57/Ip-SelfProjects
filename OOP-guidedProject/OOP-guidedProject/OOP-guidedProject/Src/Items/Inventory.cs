@@ -1,10 +1,12 @@
 ﻿namespace OOPAdventure
 {
-    public class Inventory
+    public class Inventory : IInventory
     {
         private List<Item> Items { get; } = new();
 
         public int Total => Items.Count;
+
+        public string[] InventoryList => Items.Select(i => i.Name).ToArray();
 
         public void Add(Item item)
         {
