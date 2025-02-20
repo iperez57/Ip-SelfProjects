@@ -53,6 +53,9 @@
             NotTaken = "You can't take that";
             TookDescription = "You took the {0}";
             CantTakeDescription = "You can't take the {0}";
+            Use = "use";
+            UseSuccess = "You used the {0}";
+            UseError = "You can't use that";
         }
     }
 }

@@ -32,7 +32,6 @@
         public string ChestFound { get; protected set; } = "";
         public string Gold { get; protected set; } = "";
         public string Coins{ get; protected set; } = "";
-
         public string Coin { get; protected set; } = "";
         public string Plural { get; protected set; } = "";
         public string Is { get; protected set; } = "";
@@ -44,11 +43,9 @@
         public string NotTaken { get; protected set; } = "";
         public string TookDescription { get; protected set; } = "";
         public string CantTakeDescription { get; protected set; } = "";
-
-
-
-
-
+        public string Use { get; protected set; } = "";
+        public string UseSuccess { get; protected set; } = "";
+        public string UseError { get; protected set; } = "";
 
     }
 }
