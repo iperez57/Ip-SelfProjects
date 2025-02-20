@@ -19,7 +19,7 @@
             And = "and";
             Comma = ",";
             Space = " ";
-            RoomDescription = new List<string>
+            RoomDescriptions = new List<string>
             {
                 "normal",
                 "cold",
@@ -29,6 +29,7 @@
                 "scary",
                 "strange"
             };
+            NoItem = "You don't have that";
         }
     }
 }

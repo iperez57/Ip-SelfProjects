@@ -20,6 +20,7 @@
 
         public List<string> RoomDescriptions { get; protected set; }
 
+        public string NoItem { get; protected set; } = "";
 
     }
 }
