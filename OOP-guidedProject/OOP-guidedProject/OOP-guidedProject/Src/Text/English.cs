@@ -30,6 +30,14 @@
                 "strange"
             };
             NoItem = "You don't have that";
+
+            Backpack = "Backpack";
+            BackpackError = "You don't have anything in your backpack.";
+            BackpackDescription = "You have {0} in your backpack";
+
+
+
+
         }
     }
 }
