@@ -6,7 +6,7 @@ namespace OOPAdventure
     {
         public string Name { get; set; } = Text.Language.DefaultRoomName;
         public string Description { get; set; } = Text.Language.DefaultRoomDescription;
-        private readonly IInventory _items = new Inventory();
+        private readonly IInventory _inventory = new Inventory();
         public Dictionary<Directions, int> Neighbors { get; set; } = new()
         {
             {Directions.North, -1 },
@@ -39,6 +39,21 @@ namespace OOPAdventure
             var description = string.Format(Description, Text.Language.JoinWordList(directions, Text.Language.And));
 
             sb.Append(description);
+
+            if(_inventory.Total > 0)
+            {
+                var items = _inventory.InventoryList;  
+                
+                var pluralPre= items.Length > 1 ? Text.Language.Are : Text.Language.Is;
+
+                var pluralPost = items.Length > 1 ? Text.Language.Plural : "";
+
+                sb.Append(string.Format(Text.Language.TotalItems, pluralPre, items.Length, pluralPost));
+
+                sb.Append(Text.Language.JoinWordList(items, Text.Language.And) + Text.Language.Period);
+            }
+
+
 
             return sb.ToString();
         }

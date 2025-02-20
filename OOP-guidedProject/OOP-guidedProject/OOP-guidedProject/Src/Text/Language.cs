@@ -32,7 +32,13 @@
         public string ChestFound { get; protected set; } = "";
         public string Gold { get; protected set; } = "";
         public string Coins{ get; protected set; } = "";
+
         public string Coin { get; protected set; } = "";
+        public string Plural { get; protected set; } = "";
+        public string Is { get; protected set; } = "";
+        public string Are { get; protected set; } = "";
+        public string TotalItems { get; protected set; } = "";
+        public string Period { get; protected set; } = "";
 
 
 
