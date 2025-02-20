@@ -35,7 +35,11 @@
             BackpackError = "You don't have anything in your backpack.";
             BackpackDescription = "You have {0} in your backpack";
 
-
+            Chest = "Chest";
+            UnlockChest = "You unlocked the chest";
+            Key = "Key";
+            ChestEmpty = "The chest is empty";
+            ChestFound = "You found: {0}";
 
 
         }
